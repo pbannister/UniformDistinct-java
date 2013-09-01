@@ -21,9 +21,7 @@ public class TestUniformDistinct {
             return t2 - t1;
         }
     }
-    int nbLimit, nTimes;
-    int nCount;
-    int nbCount;
+    int nbLimit, nTimes, nCount, nbCount;
     private double rate(long t) {
         return ((nCount * 1000.0 * nTimes) / t);
     }
@@ -107,7 +105,7 @@ public class TestUniformDistinct {
                 return o.generate();
             }
         };
-        System.out.println("reporting speed Max: " + nLimit);
+        System.out.println("Reporting speed as millions of values per second.  Max: " + nLimit);
         // .................1234567812345678901234567890123456789012345678901234567890123456789012345678901234567890
         System.out.println("              hash  hash/neg    hybrid reservoir      tree   shuffle     cheat          ");
         // From 256 generated to limit/2 generated.
@@ -137,19 +135,19 @@ public class TestUniformDistinct {
         new TestUniformDistinct() {
             {
                 nbLimit = 20;
-                nTimes = 10;
+                nTimes = 100;
             }
         }.run();
         new TestUniformDistinct() {
             {
                 nbLimit = 18;
-                nTimes = 10;
+                nTimes = 100;
             }
         }.run();
         new TestUniformDistinct() {
             {
                 nbLimit = 16;
-                nTimes = 10;
+                nTimes = 100;
             }
         }.run();
     }
