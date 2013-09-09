@@ -1,7 +1,5 @@
 package algorithms;
-
 import java.util.Arrays;
-
 public class UniformShuffle extends UniformDistinctBase {
     private int[] aDeck;
     @Override public void configure() {
@@ -21,7 +19,7 @@ public class UniformShuffle extends UniformDistinctBase {
         for (int i = 0; i < nCount; ++i) {
             aOut[i] = aDeck[i];
         }
-        Arrays.sort(aOut,0,nCount); // this makes the algorithm unsuited.
+        Arrays.sort(aOut, 0, nCount); // this makes the algorithm unsuited.
         return aOut;
     }
 }

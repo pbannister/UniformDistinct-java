@@ -1,24 +1,16 @@
 package algorithms;
 import java.util.Random;
 public class UniformDivide0 {
-    public int nLimit;
-    public int nCount;
     int[] aOut;
     int iOut;
+    public int nCount;
+    public int nLimit;
     Random r = new Random();
     public void configure() {
         if (nLimit <= nCount) {
             throw new RuntimeException("not possible");
         }
         aOut = new int[nCount];
-    }
-    public int[] generate() {
-        iOut = 0;
-        fill(0, nLimit, nCount);
-        if (iOut != nCount) {
-            throw new RuntimeException("less than wanted!!!");
-        }
-        return aOut;
     }
     private void fill(int vMin, int vMax, int nValues) {
         if (0 == nValues) {
@@ -50,5 +42,13 @@ public class UniformDivide0 {
             fill(v1, v2, n1);
             fill(v2, v3, n2);
         }
+    }
+    public int[] generate() {
+        iOut = 0;
+        fill(0, nLimit, nCount);
+        if (iOut != nCount) {
+            throw new RuntimeException("less than wanted!!!");
+        }
+        return aOut;
     }
 }
